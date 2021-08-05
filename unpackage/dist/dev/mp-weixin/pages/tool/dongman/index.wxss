@@ -1,0 +1,27 @@
+
+.container {
+	padding: 20rpx;
+}
+.title {
+	font-size: 30rpx;
+	font-weight: 700;
+}
+.content {
+	padding: 20rpx;
+	font-size: 28rpx;
+	margin-top: 40rpx;
+}
+.content image{
+	width: 100%;
+	border-radius: 10rpx;
+}
+.refresh {
+	width: 50%;
+	margin: 80rpx auto 0;
+}
+.refresh button {
+	background-color: #0AA0a8;
+	color: #FFFFFF;
+	font-size: 28rpx;
+}
+

@@ -1,0 +1,19 @@
+
+.container {
+	padding: 20rpx;
+}
+.lishi-container {
+	padding: 10rpx;
+}
+.lishi-item {
+	font-size: 30rpx;
+	line-height: 60rpx;
+	border-bottom: 1rpx solid #EEEEEE;
+	color: #004956;
+}
+.lishi-day {
+	text-align: right;
+	font-size: 30rpx;
+	margin-top: 20rpx;
+}
+

@@ -1,0 +1,1 @@
+<view class="container"><view class="title">一言随机输出一句话</view><view class="content">{{yiyanData.hitokoto}}</view><view class="name">{{"— "+yiyanData.author+" | "+yiyanData.source+" | "+yiyanData.catname}}</view><view class="refresh"><button type="default" data-event-opts="{{[['tap',[['refresh']]]]}}" bindtap="__e">换一换</button></view></view>

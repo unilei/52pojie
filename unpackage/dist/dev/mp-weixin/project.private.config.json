@@ -1,0 +1,54 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/tool/yiyan/index",
+          "pathName": "pages/tool/yiyan/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tool/dongman/index",
+          "pathName": "pages/tool/dongman/index",
+          "query": "type=1",
+          "scene": null
+        },
+        {
+          "name": "pages/me/index",
+          "pathName": "pages/me/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tool/lishi/index",
+          "pathName": "pages/tool/lishi/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tool/laji/index",
+          "pathName": "pages/tool/laji/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tool/video/parse",
+          "pathName": "pages/tool/video/parse",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

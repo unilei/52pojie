@@ -1,0 +1,1 @@
+<view class="detail-container"><htmltowxml vue-id="6e0d9d80-1" text="{{postDetailData.originalContent}}" type="md" data-com-type="wx" bind:__l="__l"></htmltowxml></view>

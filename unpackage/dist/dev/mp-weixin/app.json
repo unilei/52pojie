@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/me/index",
+    "pages/posts/detail",
+    "pages/tool/index",
+    "pages/tool/music/comment",
+    "pages/tool/intercept/website",
+    "pages/tool/qrcode/index",
+    "pages/tool/video/parse",
+    "pages/tool/yiyan/index",
+    "pages/tool/dongman/index",
+    "pages/tool/lishi/index",
+    "pages/tool/laji/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "吾爱破解",
+    "navigationBarBackgroundColor": "#0AA0A8",
+    "backgroundColor": "#f4f5f6"
+  },
+  "tabBar": {
+    "color": "#FFFFFF",
+    "selectedColor": "#000000",
+    "borderStyle": "white",
+    "backgroundColor": "#0AA0A8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/menu/home.png",
+        "selectedIconPath": "static/menu/home-fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tool/index",
+        "iconPath": "static/menu/tool.png",
+        "selectedIconPath": "static/menu/tool-fill.png",
+        "text": "工具"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "iconPath": "static/menu/account.png",
+        "selectedIconPath": "static/menu/account-fill.png",
+        "text": "我"
+      }
+    ]
+  },
+  "plugins": {
+    "htmltowxml": {
+      "version": "1.4.0",
+      "provider": "wxa51b9c855ae38f3c"
+    }
+  },
+  "usingComponents": {}
+}

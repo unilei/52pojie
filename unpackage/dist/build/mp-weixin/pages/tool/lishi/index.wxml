@@ -1,0 +1,1 @@
+<view class="container"><view class="lishi-container"><block wx:for="{{lishiData}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="lishi-item">{{item}}</view></block><view class="lishi-day">{{lishiDay}}</view></view></view>

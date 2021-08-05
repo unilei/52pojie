@@ -1,0 +1,33 @@
+
+.container {
+	padding: 20rpx;
+}
+.title {
+	font-size: 30rpx;
+	font-weight: 700;
+}
+.content {
+	padding: 20rpx;
+	font-size: 28rpx;
+}
+.name {
+	width: 100%;
+	text-align: right;
+	font-size: 24rpx;
+	color: #808080;
+}
+.audio {
+	width: 90%;
+	margin: 40rpx auto 0;
+	text-align: center;
+}
+.refresh {
+	width: 50%;
+	margin: 80rpx auto 0;
+}
+.refresh button {
+	background-color: #0AA0a8;
+	color: #FFFFFF;
+	font-size: 28rpx;
+}
+
