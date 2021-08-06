@@ -1,8 +1,8 @@
 <template>
 	<view class="container">
 		<view class="title">网易云热评</view>
-		<view class="content">{{cloudMusicCommentData.content}}</view>
-		<view class="name">— {{cloudMusicCommentData.name}}</view>
+		<view class="content" v-if="cloudMusicCommentData.content">{{cloudMusicCommentData.content}}</view>
+		<view class="name" v-if="cloudMusicCommentData.name">— {{cloudMusicCommentData.name}}</view>
 
 		<view class="audio">
 			<audio :src="cloudMusicCommentData.url" :poster="cloudMusicCommentData.cover"

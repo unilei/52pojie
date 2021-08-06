@@ -246,8 +246,10 @@
 
 	.posts-item-t {
 		width: 30%;
-		/* height: 300rpx; */
+		/* height: 150rpx; */
 		overflow: hidden;
+		background-color: #f4f5f6;
+		border-radius: 20rpx;
 	}
 
 	.posts-item-t image {

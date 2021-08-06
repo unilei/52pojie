@@ -25,6 +25,9 @@
 				let data = {
 					format: 'json'
 				}
+				uni.showLoading({
+					title:'加载中...'
+				})
 				toolApi.lishi(data).then(res => {
 					console.log(res)
 					if (res.code == 200) {
@@ -36,6 +39,7 @@
 							icon: 'none'
 						})
 					}
+					uni.hideLoading()
 				}).catch(err => {
 					console.log(err)
 				})

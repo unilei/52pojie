@@ -2,7 +2,7 @@
 	<view class="container">
 		<view class="title">一言随机输出一句话</view>
 		<view class="content">{{yiyanData.hitokoto}}</view>
-		<view class="name">— {{yiyanData.author}} | {{yiyanData.source}} | {{yiyanData.catname}}</view>
+		<view class="name" v-if="yiyanData.author">— {{yiyanData.author}} | {{yiyanData.source}} | {{yiyanData.catname}}</view>
 
 		<view class="refresh">
 			<button type="default" @click="refresh()">换一换</button>

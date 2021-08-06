@@ -2059,18 +2059,18 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 100:
+/***/ 126:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 101);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 127);
 
 /***/ }),
 
-/***/ 101:
+/***/ 127:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -2101,7 +2101,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 102);
+module.exports = __webpack_require__(/*! ./runtime */ 128);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -2118,7 +2118,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 102:
+/***/ 128:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -2850,7 +2850,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 103:
+/***/ 129:
 /*!********************************************************************************!*\
   !*** E:/workplace/53pj/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \********************************************************************************/
@@ -2858,7 +2858,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 100));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var pattern = {
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 126));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}function _createSuper(Derived) {var hasNativeReflectConstruct = _isNativeReflectConstruct();return function _createSuperInternal() {var Super = _getPrototypeOf(Derived),result;if (hasNativeReflectConstruct) {var NewTarget = _getPrototypeOf(this).constructor;result = Reflect.construct(Super, arguments, NewTarget);} else {result = Super.apply(this, arguments);}return _possibleConstructorReturn(this, result);};}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _isNativeReflectConstruct() {if (typeof Reflect === "undefined" || !Reflect.construct) return false;if (Reflect.construct.sham) return false;if (typeof Proxy === "function") return true;try {Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));return true;} catch (e) {return false;}}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}var pattern = {
   email: /^\S+?@\S+?\.\S+?$/,
   idcard: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
   url: new RegExp(
@@ -3347,7 +3347,7 @@ SchemaValidator;exports.default = _default;
 
 /***/ }),
 
-/***/ 139:
+/***/ 165:
 /*!*****************************************************************************!*\
   !*** E:/workplace/53pj/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \*****************************************************************************/
@@ -9821,42 +9821,65 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 4:
-/*!************************************!*\
-  !*** E:/workplace/53pj/pages.json ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
-
-/***/ 53:
-/*!************************************************!*\
-  !*** E:/workplace/53pj/api/tool/cloudMusic.js ***!
-  \************************************************/
+/***/ 31:
+/*!******************************************!*\
+  !*** E:/workplace/53pj/api/tool/tool.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
-// 
-function comment(data) {
+// format js json 
+function yiyan(data) {
   return (0, _toolRequest.default)({
     method: "GET",
-    url: 'comment',
+    url: 'yiyan',
+    data: data });
+
+}
+
+function acg(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'acg',
+    data: data });
+
+}
+
+function bing(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'bing',
+    data: data });
+
+}
+
+function lishi(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'lishi',
+    data: data });
+
+}
+function laji(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'laji',
     data: data });
 
 }var _default =
-
 {
-  comment: comment };exports.default = _default;
+  yiyan: yiyan,
+  acg: acg,
+  bing: bing,
+  lishi: lishi,
+  laji: laji };exports.default = _default;
 
 /***/ }),
 
-/***/ 54:
+/***/ 32:
 /*!********************************************!*\
   !*** E:/workplace/53pj/api/toolRequest.js ***!
   \********************************************/
@@ -9913,7 +9936,42 @@ request;exports.default = _default;
 
 /***/ }),
 
-/***/ 63:
+/***/ 4:
+/*!************************************!*\
+  !*** E:/workplace/53pj/pages.json ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ 57:
+/*!************************************************!*\
+  !*** E:/workplace/53pj/api/tool/cloudMusic.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function comment(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'comment',
+    data: data });
+
+}var _default =
+
+{
+  comment: comment };exports.default = _default;
+
+/***/ }),
+
+/***/ 66:
 /*!***********************************************!*\
   !*** E:/workplace/53pj/api/tool/intercept.js ***!
   \***********************************************/
@@ -9921,7 +9979,7 @@ request;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 
 function qqlj(data) {
@@ -9946,7 +10004,7 @@ function wxlj(data) {
 
 /***/ }),
 
-/***/ 72:
+/***/ 75:
 /*!********************************************!*\
   !*** E:/workplace/53pj/api/tool/qrcode.js ***!
   \********************************************/
@@ -9954,7 +10012,7 @@ function wxlj(data) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 
 function generateQrcode(data) {
@@ -9970,7 +10028,7 @@ function generateQrcode(data) {
 
 /***/ }),
 
-/***/ 81:
+/***/ 84:
 /*!****************************************!*\
   !*** E:/workplace/53pj/common/util.js ***!
   \****************************************/
@@ -9989,7 +10047,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 82:
+/***/ 85:
 /*!*******************************************!*\
   !*** E:/workplace/53pj/api/tool/video.js ***!
   \*******************************************/
@@ -9997,7 +10055,7 @@ module.exports = {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 
 function videoParse(data) {
@@ -10013,7 +10071,7 @@ function videoParse(data) {
 
 /***/ }),
 
-/***/ 83:
+/***/ 86:
 /*!****************************************************!*\
   !*** E:/workplace/53pj/js_sdk/xb-copy/uni-copy.js ***!
   \****************************************************/
@@ -10064,64 +10122,6 @@ function videoParse(data) {
 
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 92:
-/*!******************************************!*\
-  !*** E:/workplace/53pj/api/tool/tool.js ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 54));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// format js json 
-function yiyan(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'yiyan',
-    data: data });
-
-}
-
-function acg(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'acg',
-    data: data });
-
-}
-
-function bing(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'bing',
-    data: data });
-
-}
-
-function lishi(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'lishi',
-    data: data });
-
-}
-function laji(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'laji',
-    data: data });
-
-}var _default =
-{
-  yiyan: yiyan,
-  acg: acg,
-  bing: bing,
-  lishi: lishi,
-  laji: laji };exports.default = _default;
 
 /***/ })
 
