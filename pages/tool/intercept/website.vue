@@ -99,6 +99,12 @@
 		onReady() {
 			// 需要在onReady中设置规则
 			this.$refs.form.setRules(this.rules)
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>
@@ -114,7 +120,7 @@
 	.container button{
 		width: 50%;
 		margin: 0 auto;
-		background-color: #0AA0A8;
+		background-color: #4f1c85;
 		color: #FFFFFF;
 		font-size: 30rpx;
 		

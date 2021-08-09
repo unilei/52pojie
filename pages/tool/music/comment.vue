@@ -54,6 +54,12 @@
 			refresh() {
 				this.getCloudMusicComment();
 			}
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>
@@ -93,7 +99,7 @@
 	}
 
 	.refresh button {
-		background-color: #0AA0a8;
+		background-color: #4f1c85;
 		color: #FFFFFF;
 		font-size: 28rpx;
 	}

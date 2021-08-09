@@ -4,9 +4,6 @@
 			<view class="mini-item" @click="turnMiniProgram(1)">爱盼影视</view>
 			<view class="mini-item" @click="turnMiniProgram(2)">抛硬币Plus</view>
 		</view>
-		<view class="ip-container">
-			<image src="https://tenapi.cn/ipinfo/" mode="widthFix"></image>
-		</view>
 	</view>
 </template>
 
@@ -47,13 +44,19 @@
 				}
 
 			}
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>
 
 <style>
 	page {
-		background-color: #F4F5F6;
+		background-color: #080904;
 	}
 
 	.container {
@@ -67,19 +70,10 @@
 	.mini-item {
 		font-size: 30rpx;
 		padding: 20rpx;
-		border-bottom: 1rpx solid #EEEEEE;
-		background-color: #FFFFFF;
+		background-color: #23273d;
+		color: #FFFFFF;
+		margin-top: 20rpx;
+		border-radius: 20rpx;
 	}
-
-	.ip-container {
-		width: 96%;
-		margin: 0 auto;
-		background-color: #FFFFFF;
-
-	}
-
-	.ip-container image {
-		width: 100%;
-		border-radius: 10rpx;
-	}
+	
 </style>

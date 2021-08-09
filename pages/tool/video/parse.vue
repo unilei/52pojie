@@ -180,6 +180,12 @@
 		onReady() {
 			// 需要在onReady中设置规则
 			this.$refs.form.setRules(this.rules)
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>

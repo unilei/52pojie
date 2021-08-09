@@ -32,6 +32,12 @@
 					console.log(err)
 				})
 			}
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>

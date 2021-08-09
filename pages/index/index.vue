@@ -147,13 +147,28 @@
 		onReachBottom() {
 			this.postPage ++;
 			this.getPostsList(this.postPage, this.postPageSize);
+		},
+		onPullDownRefresh() {
+			this.getJrscSentence();
+			this.postPage = 0;
+			this.getPostsList(this.postPage, this.postPageSize);
+			setTimeout(function(){
+				uni.stopPullDownRefresh();
+			},1000)
+			
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>
 
 <style>
 	page {
-		background-color: #f5f6f7;
+		background-color: #080904;
 	}
 
 	.container {
@@ -206,7 +221,7 @@
 
 	.jrsc-container {
 		margin-top: 20rpx;
-		background-color: #FFFFFF;
+		background-color: #23273d;
 		border-radius: 10rpx;
 		padding: 10rpx 20rpx;
 		box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
@@ -215,7 +230,7 @@
 	.jrsc-title {
 		font-size: 28rpx;
 		font-weight: 700;
-		color: #00b3d2;
+		color: #FFFFFF;
 	}
 
 	.posts-container {
@@ -223,9 +238,10 @@
 	}
 
 	.posts-title {
-		font-size: 24rpx;
+		font-size: 34rpx;
 		padding: 0rpx 10rpx;
 		font-weight: 700;
+		color: #FFFFFF;
 	}
 
 	.posts {
@@ -233,8 +249,8 @@
 	}
 
 	.posts-item {
-		margin-top: 10rpx;
-		background-color: #FFFFFF;
+		margin-top: 20rpx;
+		background-color: #c45606;
 		padding: 20rpx;
 		border-radius: 20rpx;
 		box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
@@ -246,7 +262,7 @@
 
 	.posts-item-t {
 		width: 30%;
-		/* height: 150rpx; */
+		height: 120rpx;
 		overflow: hidden;
 		background-color: #f4f5f6;
 		border-radius: 20rpx;
@@ -254,13 +270,12 @@
 
 	.posts-item-t image {
 		width: 100%;
-		border: 1rpx solid #EEEEEE;
 		border-radius: 20rpx;
 	}
 
 	.posts-item-title {
 		font-size: 24rpx;
-		color: #808080;
+		color: #FFFFFF;
 		font-weight: 700;
 		text-decoration: underline;
 	}

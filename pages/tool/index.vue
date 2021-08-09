@@ -64,13 +64,19 @@
 					url:'/pages/tool/laji/index'
 				})
 			}
+		},
+		onShareAppMessage() {
+			
+		},
+		onShareTimeline() {
+			
 		}
 	}
 </script>
 
 <style>
 	page {
-		background-color: #f4f5f6;
+		background-color: #080904;
 	}
 
 	.container {
@@ -86,12 +92,13 @@
 		padding: 10rpx;
 		width: 45%;
 		height: 100rpx;
-		font-size: 24rpx;
+		font-size: 28rpx;
 		font-weight: 700;
-		background-color: #FFFFFF;
+		background-color: #23273d;
 		box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.2);
 
-		color: #000000;
+		color: #FFFFFF;
+		font-weight: 700;
 		margin-top: 20rpx;
 
 		display: flex;
