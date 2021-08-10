@@ -284,6 +284,21 @@ var _default = { data: function data() {return { postBannerData: [], postsData: 
   onReachBottom: function onReachBottom() {
     this.postPage++;
     this.getPostsList(this.postPage, this.postPageSize);
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.getJrscSentence();
+    this.postPage = 0;
+    this.getPostsList(this.postPage, this.postPageSize);
+    setTimeout(function () {
+      uni.stopPullDownRefresh();
+    }, 1000);
+
+  },
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

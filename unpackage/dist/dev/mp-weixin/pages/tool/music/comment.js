@@ -185,7 +185,14 @@ var _default = { data: function data() {return { cloudMusicCommentData: {}, audi
     },
     refresh: function refresh() {
       this.getCloudMusicComment();
-    } } };exports.default = _default;
+    } },
+
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

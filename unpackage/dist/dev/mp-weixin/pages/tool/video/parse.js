@@ -341,6 +341,12 @@ var _default = { data: function data() {return { formData: { url: '' }, rules: {
   onReady: function onReady() {
     // 需要在onReady中设置规则
     this.$refs.form.setRules(this.rules);
+  },
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

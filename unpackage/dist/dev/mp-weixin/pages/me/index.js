@@ -140,9 +140,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
 var _tool = _interopRequireDefault(__webpack_require__(/*! @/api/tool/tool.js */ 31));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -152,10 +149,10 @@ var _tool = _interopRequireDefault(__webpack_require__(/*! @/api/tool/tool.js */
 //
 //
 //
-//
-//
-//
-var _default = { data: function data() {return {};}, onLoad: function onLoad() {}, methods: { turnMiniProgram: function turnMiniProgram(type) {
+var _default = { data: function data() {return {};}, onLoad: function onLoad() {
+  },
+  methods: {
+    turnMiniProgram: function turnMiniProgram(type) {
       if (type == 1) {
         uni.navigateToMiniProgram({
           appId: 'wx2559b84e4d1a01e7',
@@ -178,7 +175,14 @@ var _default = { data: function data() {return {};}, onLoad: function onLoad() {
 
       }
 
-    } } };exports.default = _default;
+    } },
+
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

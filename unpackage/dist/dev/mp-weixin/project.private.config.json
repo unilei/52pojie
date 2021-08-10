@@ -47,6 +47,12 @@
           "pathName": "pages/tool/video/parse",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/posts/detail",
+          "pathName": "pages/posts/detail",
+          "query": "id=53",
+          "scene": null
         }
       ]
     }

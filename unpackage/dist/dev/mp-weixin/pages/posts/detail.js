@@ -130,21 +130,21 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
 
 
 
 
 
 
-var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));
+var _uniCopy = _interopRequireDefault(__webpack_require__(/*! @/js_sdk/xb-copy/uni-copy.js */ 86));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
 //
 //
-var _default = { data: function data() {return { postDetailData: {} };
-  },
+var _default = { data: function data() {return { postDetailData: {} };},
   filters: {},
 
   onLoad: function onLoad(option) {
@@ -163,7 +163,35 @@ var _default = { data: function data() {return { postDetailData: {} };
       }).catch(function (err) {
         console.log(err);
       });
-    } } };exports.default = _default;
+    },
+    wxmlTagATap: function wxmlTagATap(e) {
+      console.log('aaa');
+      console.log(e);
+      (0, _uniCopy.default)({
+        content: e.detail.src,
+        success: function success(res) {
+          uni.showToast({
+            title: "复制成功，在浏览器打开",
+            icon: 'none' });
+
+        },
+        error: function error(e) {
+          uni.showToast({
+            title: e,
+            icon: 'none',
+            duration: 3000 });
+
+        } });
+
+    } },
+
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
+  } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -1,6 +1,6 @@
 
 page {
-	background-color: #f4f5f6;
+	background-color: #080904;
 }
 .container {
 	padding: 20rpx;
@@ -24,13 +24,14 @@ page {
 	padding: 10rpx;
 	width: 45%;
 	height: 100rpx;
-	font-size: 24rpx;
+	font-size: 28rpx;
 	font-weight: 700;
-	background-color: #FFFFFF;
+	background-color: #23273d;
 	-webkit-box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.2);
 	        box-shadow: 0 0 20rpx 0 rgba(0, 0, 0, 0.2);
 
-	color: #000000;
+	color: #FFFFFF;
+	font-weight: 700;
 	margin-top: 20rpx;
 
 	display: -webkit-box;

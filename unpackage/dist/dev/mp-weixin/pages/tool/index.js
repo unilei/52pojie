@@ -195,7 +195,14 @@ var _default =
       uni.navigateTo({
         url: '/pages/tool/laji/index' });
 
-    } } };exports.default = _default;
+    } },
+
+  onShareAppMessage: function onShareAppMessage() {
+
+  },
+  onShareTimeline: function onShareTimeline() {
+
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
