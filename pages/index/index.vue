@@ -250,7 +250,7 @@
 
 	.posts-item {
 		margin-top: 20rpx;
-		background-color: #c45606;
+		background-color: #23273d;
 		padding: 20rpx;
 		border-radius: 20rpx;
 		box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);

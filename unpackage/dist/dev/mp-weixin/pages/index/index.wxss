@@ -22,8 +22,7 @@ page {
 	position: relative;
 	border-radius: 20rpx;
 	overflow: hidden;
-	-webkit-box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.2);
-	        box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.2);
 }
 .swiper-item image {
 	width: 100%;
@@ -49,8 +48,7 @@ page {
 	background-color: #23273d;
 	border-radius: 10rpx;
 	padding: 10rpx 20rpx;
-	-webkit-box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
-	        box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
 }
 .jrsc-title {
 	font-size: 28rpx;
@@ -71,11 +69,10 @@ page {
 }
 .posts-item {
 	margin-top: 20rpx;
-	background-color: #c45606;
+	background-color: #23273d;
 	padding: 20rpx;
 	border-radius: 20rpx;
-	-webkit-box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
-	        box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.1);
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;

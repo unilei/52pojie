@@ -109,6 +109,12 @@
 				"text": "首页"
 			},
 			{
+				"pagePath": "pages/tool/video/parse",
+				"iconPath": "static/menu/parse-11.png",
+				"selectedIconPath": "static/menu/parse-22.png",
+				"text": "解析"
+			},
+			{
 				"pagePath": "pages/tool/index",
 				"iconPath": "static/menu/tool-1.png",
 				"selectedIconPath": "static/menu/tool-2.png",

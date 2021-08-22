@@ -282,10 +282,14 @@ var promiseInterceptor = {
     if (!isPromise(res)) {
       return res;
     }
-    return res.then(function (res) {
-      return res[1];
-    }).catch(function (res) {
-      return res[0];
+    return new Promise(function (resolve, reject) {
+      res.then(function (res) {
+        if (res[0]) {
+          reject(res[0]);
+        } else {
+          resolve(res[1]);
+        }
+      });
     });
   } };
 
@@ -2851,9 +2855,9 @@ if (hadRuntime) {
 /***/ }),
 
 /***/ 129:
-/*!********************************************************************************!*\
-  !*** E:/workplace/53pj/uni_modules/uni-forms/components/uni-forms/validate.js ***!
-  \********************************************************************************/
+/*!***********************************************************************************!*\
+  !*** E:/workplace/52pojie/uni_modules/uni-forms/components/uni-forms/validate.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3348,9 +3352,9 @@ SchemaValidator;exports.default = _default;
 /***/ }),
 
 /***/ 165:
-/*!*****************************************************************************!*\
-  !*** E:/workplace/53pj/uni_modules/uni-icons/components/uni-icons/icons.js ***!
-  \*****************************************************************************/
+/*!********************************************************************************!*\
+  !*** E:/workplace/52pojie/uni_modules/uni-icons/components/uni-icons/icons.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3490,9 +3494,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 17:
-/*!************************************************!*\
-  !*** E:/workplace/53pj/api/content/archive.js ***!
-  \************************************************/
+/*!***************************************************!*\
+  !*** E:/workplace/52pojie/api/content/archive.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3523,9 +3527,9 @@ function listYearArchives(data) {
 /***/ }),
 
 /***/ 18:
-/*!****************************************!*\
-  !*** E:/workplace/53pj/api/request.js ***!
-  \****************************************/
+/*!*******************************************!*\
+  !*** E:/workplace/52pojie/api/request.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3574,9 +3578,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 19:
-/*!*************************************************!*\
-  !*** E:/workplace/53pj/api/content/category.js ***!
-  \*************************************************/
+/*!****************************************************!*\
+  !*** E:/workplace/52pojie/api/content/category.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8231,7 +8235,7 @@ function initProps (vm, propsOptions) {
       defineReactive$$1(props, key, value, function () {
         if (!isRoot && !isUpdatingChildComponent) {
           {
-            if(vm.mpHost === 'mp-baidu'){//百度 observer 在 setData callback 之后触发，直接忽略该 warn
+            if(vm.mpHost === 'mp-baidu' || vm.mpHost === 'mp-kuaishou'){//百度、快手 observer 在 setData callback 之后触发，直接忽略该 warn
                 return
             }
             //fixed by xxxxxx __next_tick_pending,uni://form-field 时不告警
@@ -9661,9 +9665,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!*************************************!*\
-  !*** E:/workplace/53pj/api/jrsc.js ***!
-  \*************************************/
+/*!****************************************!*\
+  !*** E:/workplace/52pojie/api/jrsc.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9695,9 +9699,9 @@ function getSentence(data) {
 /***/ }),
 
 /***/ 21:
-/*!********************************************!*\
-  !*** E:/workplace/53pj/api/jrscRequest.js ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** E:/workplace/52pojie/api/jrscRequest.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9756,9 +9760,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 22:
-/*!**********************************************!*\
-  !*** E:/workplace/53pj/api/content/posts.js ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** E:/workplace/52pojie/api/content/posts.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9822,9 +9826,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 31:
-/*!******************************************!*\
-  !*** E:/workplace/53pj/api/tool/tool.js ***!
-  \******************************************/
+/*!*********************************************!*\
+  !*** E:/workplace/52pojie/api/tool/tool.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9880,9 +9884,9 @@ function laji(data) {
 /***/ }),
 
 /***/ 32:
-/*!********************************************!*\
-  !*** E:/workplace/53pj/api/toolRequest.js ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** E:/workplace/52pojie/api/toolRequest.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9937,9 +9941,9 @@ request;exports.default = _default;
 /***/ }),
 
 /***/ 4:
-/*!************************************!*\
-  !*** E:/workplace/53pj/pages.json ***!
-  \************************************/
+/*!***************************************!*\
+  !*** E:/workplace/52pojie/pages.json ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -9947,134 +9951,10 @@ request;exports.default = _default;
 
 /***/ }),
 
-/***/ 57:
-/*!************************************************!*\
-  !*** E:/workplace/53pj/api/tool/cloudMusic.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 
-function comment(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'comment',
-    data: data });
-
-}var _default =
-
-{
-  comment: comment };exports.default = _default;
-
-/***/ }),
-
-/***/ 66:
-/*!***********************************************!*\
-  !*** E:/workplace/53pj/api/tool/intercept.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 
-function qqlj(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'qqlj',
-    data: data });
-
-}
-
-function wxlj(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'wx',
-    data: data });
-
-}var _default =
-
-{
-  qqlj: qqlj,
-  wxlj: wxlj };exports.default = _default;
-
-/***/ }),
-
-/***/ 75:
-/*!********************************************!*\
-  !*** E:/workplace/53pj/api/tool/qrcode.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 
-function generateQrcode(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'qr',
-    data: data });
-
-}var _default =
-
-{
-  generateQrcode: generateQrcode };exports.default = _default;
-
-/***/ }),
-
-/***/ 84:
-/*!****************************************!*\
-  !*** E:/workplace/53pj/common/util.js ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-function httpString(s) {
-  //var reg = /(http:\/\/|https:\/\/)((\w|=|\?|\.|\/|&|-)+)/g;
-  var reg = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g;
-  s = s.match(reg);
-  return s;
-}
-
-module.exports = {
-  httpString: httpString };
-
-/***/ }),
-
-/***/ 85:
-/*!*******************************************!*\
-  !*** E:/workplace/53pj/api/tool/video.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 
-function videoParse(data) {
-  return (0, _toolRequest.default)({
-    method: "GET",
-    url: 'video',
-    data: data });
-
-}var _default =
-
-{
-  videoParse: videoParse };exports.default = _default;
-
-/***/ }),
-
-/***/ 86:
-/*!****************************************************!*\
-  !*** E:/workplace/53pj/js_sdk/xb-copy/uni-copy.js ***!
-  \****************************************************/
+/***/ 41:
+/*!*******************************************************!*\
+  !*** E:/workplace/52pojie/js_sdk/xb-copy/uni-copy.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10122,6 +10002,130 @@ function videoParse(data) {
 
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 58:
+/*!***************************************************!*\
+  !*** E:/workplace/52pojie/api/tool/cloudMusic.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function comment(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'comment',
+    data: data });
+
+}var _default =
+
+{
+  comment: comment };exports.default = _default;
+
+/***/ }),
+
+/***/ 67:
+/*!**************************************************!*\
+  !*** E:/workplace/52pojie/api/tool/intercept.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function qqlj(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'qqlj',
+    data: data });
+
+}
+
+function wxlj(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'wx',
+    data: data });
+
+}var _default =
+
+{
+  qqlj: qqlj,
+  wxlj: wxlj };exports.default = _default;
+
+/***/ }),
+
+/***/ 76:
+/*!***********************************************!*\
+  !*** E:/workplace/52pojie/api/tool/qrcode.js ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function generateQrcode(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'qr',
+    data: data });
+
+}var _default =
+
+{
+  generateQrcode: generateQrcode };exports.default = _default;
+
+/***/ }),
+
+/***/ 85:
+/*!*******************************************!*\
+  !*** E:/workplace/52pojie/common/util.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function httpString(s) {
+  //var reg = /(http:\/\/|https:\/\/)((\w|=|\?|\.|\/|&|-)+)/g;
+  var reg = /(https?|http|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g;
+  s = s.match(reg);
+  return s;
+}
+
+module.exports = {
+  httpString: httpString };
+
+/***/ }),
+
+/***/ 86:
+/*!**********************************************!*\
+  !*** E:/workplace/52pojie/api/tool/video.js ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _toolRequest = _interopRequireDefault(__webpack_require__(/*! ../toolRequest.js */ 32));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function videoParse(data) {
+  return (0, _toolRequest.default)({
+    method: "GET",
+    url: 'video',
+    data: data });
+
+}var _default =
+
+{
+  videoParse: videoParse };exports.default = _default;
 
 /***/ })
 
