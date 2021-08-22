@@ -39,6 +39,7 @@
 	import categoryApi from '@/api/content/category.js';
 	import jrscApi from '@/api/jrsc.js';
 	import postsApi from '@/api/content/posts.js';
+	import wpPostsApi from '@/api/wp/posts.js';
 
 	export default {
 		data() {
@@ -61,8 +62,19 @@
 			// this.getCategoryList();
 			// this.getPostListByCategorySlug('');
 			this.getPostsList(this.postPage, this.postPageSize);
+			this.getWpPosts();
 		},
 		methods: {
+			getWpPosts(){
+				let data ={
+					
+				}
+				wpPostsApi.postsList(data).then(res=>{
+					console.log(res)
+				}).catch(err=>{
+					console.log(err)
+				})
+			},
 			getPostsList(page, size) {
 				let data = {
 					page: page,

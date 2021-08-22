@@ -3577,6 +3577,79 @@ request;exports.default = _default;
 
 /***/ }),
 
+/***/ 187:
+/*!*********************************************!*\
+  !*** E:/workplace/52pojie/api/wpRequest.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var request = function request(config) {
+  // 处理 apiUrl
+  var api_url = config.url;
+
+  config.url = 'http://wordpress.unilei.cn/' + api_url;
+
+  if (!config.data) {
+    config.data = {};
+  }
+
+  var promise = new Promise(function (resolve, reject) {
+
+    uni.request(config).then(function (responses) {
+      // 异常
+      // console.log(responses)
+      if (responses[0]) {
+        reject({
+          message: "网络超时" });
+
+      } else {
+        var response = responses[1].data;
+        var statusCode = responses[1].statusCode;
+        //token 失效 返回登录页面
+        if (statusCode === 401) {
+
+        } else {
+          resolve(response);
+        }
+      }
+    }).catch(function (error) {
+      reject(error);
+    });
+  });
+  return promise;
+};var _default =
+
+request;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 188:
+/*!********************************************!*\
+  !*** E:/workplace/52pojie/api/wp/posts.js ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _wpRequest = _interopRequireDefault(__webpack_require__(/*! ../wpRequest.js */ 187));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 
+function postsList(data) {
+  return (0, _wpRequest.default)({
+    method: "GET",
+    url: 'wp-json/wp/v2/posts',
+    data: data });
+
+}var _default =
+
+{
+  postsList: postsList };exports.default = _default;
+
+/***/ }),
+
 /***/ 19:
 /*!****************************************************!*\
   !*** E:/workplace/52pojie/api/content/category.js ***!

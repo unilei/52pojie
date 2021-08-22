@@ -175,7 +175,8 @@ __webpack_require__.r(__webpack_exports__);
 var _archive = _interopRequireDefault(__webpack_require__(/*! @/api/content/archive.js */ 17));
 var _category = _interopRequireDefault(__webpack_require__(/*! @/api/content/category.js */ 19));
 var _jrsc = _interopRequireDefault(__webpack_require__(/*! @/api/jrsc.js */ 20));
-var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));
+var _posts2 = _interopRequireDefault(__webpack_require__(/*! @/api/wp/posts.js */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -213,8 +214,19 @@ var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.
 //
 var _default = { data: function data() {return { postBannerData: [], postsData: [], postPage: 0, postPageSize: 5, postLastPage: 0, jrscData: {} };}, onLoad: function onLoad() {var jrscToken = uni.getStorageSync('jrscToken');if (!jrscToken) {this.getJrscToken();}this.getJrscSentence(); // this.getCategoryList();
     // this.getPostListByCategorySlug('');
-    this.getPostsList(this.postPage, this.postPageSize);}, methods: { getPostsList: function getPostsList(page, size) {var _this = this;var data = { page: page, size: size, sort: 'createTime,desc' };_posts.default.listPosts(data).then(function (res) {// console.log(res)
-        if (res.status == 200) {var content = res.data.content;if (page == 0) {_this.postBannerData = content.slice(0, 4);}_this.postsData = _this.postsData.concat(content);_this.postLastPage = res.data.pages;
+    this.getPostsList(this.postPage, this.postPageSize);this.getWpPosts();}, methods: { getWpPosts: function getWpPosts() {var data = {};_posts2.default.postsList(data).then(function (res) {console.log(res);}).catch(function (err) {console.log(err);});}, getPostsList: function getPostsList(page, size) {var _this = this;var data = { page: page,
+        size: size,
+        sort: 'createTime,desc' };
+
+      _posts.default.listPosts(data).then(function (res) {
+        // console.log(res)
+        if (res.status == 200) {
+          var content = res.data.content;
+          if (page == 0) {
+            _this.postBannerData = content.slice(0, 4);
+          }
+          _this.postsData = _this.postsData.concat(content);
+          _this.postLastPage = res.data.pages;
 
         }
       }).catch(function (err) {
