@@ -172,11 +172,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _archive = _interopRequireDefault(__webpack_require__(/*! @/api/content/archive.js */ 17));
-var _category = _interopRequireDefault(__webpack_require__(/*! @/api/content/category.js */ 19));
+
 var _jrsc = _interopRequireDefault(__webpack_require__(/*! @/api/jrsc.js */ 20));
-var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));
-var _posts2 = _interopRequireDefault(__webpack_require__(/*! @/api/wp/posts.js */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/wp/posts.js */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -212,23 +210,23 @@ var _posts2 = _interopRequireDefault(__webpack_require__(/*! @/api/wp/posts.js *
 //
 //
 //
-var _default = { data: function data() {return { postBannerData: [], postsData: [], postPage: 0, postPageSize: 5, postLastPage: 0, jrscData: {} };}, onLoad: function onLoad() {var jrscToken = uni.getStorageSync('jrscToken');if (!jrscToken) {this.getJrscToken();}this.getJrscSentence(); // this.getCategoryList();
-    // this.getPostListByCategorySlug('');
-    this.getPostsList(this.postPage, this.postPageSize);this.getWpPosts();}, methods: { getWpPosts: function getWpPosts() {var data = {};_posts2.default.postsList(data).then(function (res) {console.log(res);}).catch(function (err) {console.log(err);});}, getPostsList: function getPostsList(page, size) {var _this = this;var data = { page: page,
-        size: size,
-        sort: 'createTime,desc' };
+var _default = { data: function data() {return { postBannerData: [], postsData: [], postPage: 1, postPageSize: 5, postLastPage: 0, jrscData: {}, postLastPageStatus: false };}, onLoad: function onLoad() {var jrscToken = uni.getStorageSync('jrscToken');if (!jrscToken) {this.getJrscToken();}this.getJrscSentence();this.getStickyPosts(1, 100);this.getWpPosts(this.postPage, this.postPageSize);}, methods: { getStickyPosts: function getStickyPosts(page, pageSize) {var _this = this;var data = { sticky: true, _embed: true, page: page, per_page: pageSize };_posts.default.postsList(data).then(function (res) {console.log(res);_this.postBannerData = res;}).catch(function (err) {
+        console.log(err);
+      });
+    },
+    getWpPosts: function getWpPosts(page, pageSize) {var _this2 = this;
+      var data = {
+        _embed: true,
+        page: page,
+        per_page: pageSize };
 
-      _posts.default.listPosts(data).then(function (res) {
-        // console.log(res)
-        if (res.status == 200) {
-          var content = res.data.content;
-          if (page == 0) {
-            _this.postBannerData = content.slice(0, 4);
-          }
-          _this.postsData = _this.postsData.concat(content);
-          _this.postLastPage = res.data.pages;
-
+      _posts.default.postsList(data).then(function (res) {
+        console.log(res);
+        if (res.code && res.data.status == 400) {
+          _this2.postLastPageStatus = true;
+          return;
         }
+        _this2.postsData = _this2.postsData.concat(res);
       }).catch(function (err) {
         console.log(err);
       });
@@ -249,42 +247,18 @@ var _default = { data: function data() {return { postBannerData: [], postsData: 
         console.log(err);
       });
     },
-    getJrscSentence: function getJrscSentence() {var _this2 = this;
+    getJrscSentence: function getJrscSentence() {var _this3 = this;
       var data = {};
       _jrsc.default.getSentence(data).then(function (res) {
         // console.log(res)
         if (res.status == 'success') {
-          _this2.jrscData = res.data;
+          _this3.jrscData = res.data;
         } else {
           console.log('jrsc:' + res.status);
         }
       }).catch(function (err) {
         console.log(err);
       });
-    },
-    getCategoryList: function getCategoryList() {
-      var data = {
-        sort: 'createTime,desc',
-        more: true };
-
-      _category.default.listCategories(data).then(function (res) {
-        console.log(res);
-      }).catch(function (err) {
-        console.log(err);
-      });
-    },
-    getPostListByCategorySlug: function getPostListByCategorySlug(slug) {
-
-      var data = {
-        slug: slug };
-
-
-      _category.default.listsPostsByCategorySlug(data).then(function (res) {
-        console.log(res);
-      }).catch(function (err) {
-        console.log(err);
-      });
-
     },
     turnPostDetail: function turnPostDetail(id) {
       uni.navigateTo({
@@ -294,13 +268,20 @@ var _default = { data: function data() {return { postBannerData: [], postsData: 
 
 
   onReachBottom: function onReachBottom() {
+    if (this.postLastPageStatus) {
+      return;
+    }
     this.postPage++;
-    this.getPostsList(this.postPage, this.postPageSize);
+    this.getWpPosts(this.postPage, this.postPageSize);
   },
   onPullDownRefresh: function onPullDownRefresh() {
     this.getJrscSentence();
-    this.postPage = 0;
-    this.getPostsList(this.postPage, this.postPageSize);
+    this.postPage = 1;
+    this.postsData = [];
+    this.postBannerData = [];
+    this.postLastPageStatus = false;
+    this.getStickyPosts(1, 100);
+    this.getWpPosts(this.postPage, this.postPageSize);
     setTimeout(function () {
       uni.stopPullDownRefresh();
     }, 1000);

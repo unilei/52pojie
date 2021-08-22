@@ -3493,90 +3493,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 17:
-/*!***************************************************!*\
-  !*** E:/workplace/52pojie/api/content/archive.js ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 
-function listMonthArchives(data) {
-  return (0, _request.default)({
-    method: "GET",
-    url: 'content/archives/months',
-    data: data });
-
-}
-
-function listYearArchives(data) {
-  return (0, _request.default)({
-    method: "GET",
-    url: 'content/archives/years',
-    data: data });
-
-}var _default =
-
-{
-  listMonthArchives: listMonthArchives,
-  listYearArchives: listYearArchives };exports.default = _default;
-
-/***/ }),
-
-/***/ 18:
-/*!*******************************************!*\
-  !*** E:/workplace/52pojie/api/request.js ***!
-  \*******************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var request = function request(config) {
-  // 处理 apiUrl
-  var api_url = config.url;
-
-  config.url = 'https://www.unilei.cn/api/' + api_url;
-
-  config.data.api_access_key = 'xuliulei';
-
-  if (!config.data) {
-    config.data = {};
-  }
-
-  var promise = new Promise(function (resolve, reject) {
-
-    uni.request(config).then(function (responses) {
-      // 异常
-      // console.log(responses)
-      if (responses[0]) {
-        reject({
-          message: "网络超时" });
-
-      } else {
-        var response = responses[1].data;
-        var statusCode = responses[1].statusCode;
-        //token 失效 返回登录页面
-        if (statusCode === 401) {
-
-        } else {
-          resolve(response);
-        }
-      }
-    }).catch(function (error) {
-      reject(error);
-    });
-  });
-  return promise;
-};var _default =
-
-request;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 187:
 /*!*********************************************!*\
   !*** E:/workplace/52pojie/api/wpRequest.js ***!
@@ -3589,7 +3505,7 @@ request;exports.default = _default;
   // 处理 apiUrl
   var api_url = config.url;
 
-  config.url = 'http://wordpress.unilei.cn/' + api_url;
+  config.url = 'https://www.unilei.cn/' + api_url;
 
   if (!config.data) {
     config.data = {};
@@ -3643,48 +3559,18 @@ function postsList(data) {
     url: 'wp-json/wp/v2/posts',
     data: data });
 
-}var _default =
-
-{
-  postsList: postsList };exports.default = _default;
-
-/***/ }),
-
-/***/ 19:
-/*!****************************************************!*\
-  !*** E:/workplace/52pojie/api/content/category.js ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// sort  more 
-function listCategories(data) {
-  return (0, _request.default)({
-    method: "GET",
-    url: 'content/categories',
-    data: data });
-
 }
-
-
-function listsPostsByCategorySlug(data) {
-  var url = "content/categories/default/posts";
-  if (data.slug) {
-    url = "content/categories/" + data.slug + "/posts";
-  }
-  return (0, _request.default)({
+function postsDetail(id, data) {
+  return (0, _wpRequest.default)({
     method: "GET",
-    url: url,
+    url: 'wp-json/wp/v2/posts/' + id,
     data: data });
 
 }var _default =
 
 {
-  listCategories: listCategories,
-  listsPostsByCategorySlug: listsPostsByCategorySlug };exports.default = _default;
+  postsList: postsList,
+  postsDetail: postsDetail };exports.default = _default;
 
 /***/ }),
 
@@ -9829,41 +9715,6 @@ function getSentence(data) {
 
 request;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 22:
-/*!*************************************************!*\
-  !*** E:/workplace/52pojie/api/content/posts.js ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _request = _interopRequireDefault(__webpack_require__(/*! ../request.js */ 18));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// page size sort
-function listPosts(data) {
-  return (0, _request.default)({
-    method: "GET",
-    url: 'content/posts',
-    data: data });
-
-}
-
-
-function postDetailById(data, pathData) {
-  return (0, _request.default)({
-    method: "GET",
-    url: 'content/posts/' + pathData,
-    data: data });
-
-}var _default =
-
-
-{
-  listPosts: listPosts,
-  postDetailById: postDetailById };exports.default = _default;
 
 /***/ }),
 

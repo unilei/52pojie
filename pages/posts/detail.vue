@@ -1,11 +1,14 @@
 <template>
 	<view class="detail-container">
-		<htmltowxml :text="postDetailData.originalContent" type="md"  @WxmlTagATap="wxmlTagATap" />
+		<view class="title" v-if="postDetailData.title.rendered">
+			{{postDetailData.title.rendered}}
+		</view>
+		<htmltowxml :text="postDetailData.content.rendered" type="md"  @WxmlTagATap="wxmlTagATap" />
 	</view>
 </template>
 
 <script>
-	import postsApi from '@/api/content/posts.js';
+	import wpPostsApi from '@/api/wp/posts.js';
 	import uniCopy from '@/js_sdk/xb-copy/uni-copy.js'
 	export default {
 		data() {
@@ -16,9 +19,19 @@
 		filters:{
 		},
 		onLoad(option) {
-			this.getPostDetailById(option.id);
+			this.getWpPostsDetail(option.id);
 		},
 		methods: {
+			getWpPostsDetail(id){
+				let data = {
+				}
+				wpPostsApi.postsDetail(id,data).then(res=>{
+					console.log(res)
+					this.postDetailData = res;
+				}).catch(err=>{
+					console.log(err)
+				})
+			},
 			getPostDetailById(id) {
 				let data = {}
 				postsApi.postDetailById(data, id).then(res => {
@@ -66,6 +79,13 @@
 .detail-container{
 	padding: 20rpx;
 	font-size: 28rpx;
+}
+
+.title{
+	font-size: 34rpx;
+	font-weight: 700;
+	text-align: center;
+	padding-bottom: 40rpx;
 }
 
 </style>

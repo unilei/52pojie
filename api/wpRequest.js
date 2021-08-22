@@ -2,7 +2,7 @@ const request = (config) => {
 	// 处理 apiUrl
 	let api_url = config.url;
 	
-	config.url = 'http://wordpress.unilei.cn/' + api_url;
+	config.url = 'https://www.unilei.cn/' + api_url;
 	
 	if (!config.data) {
 		config.data = {};

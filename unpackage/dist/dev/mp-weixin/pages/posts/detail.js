@@ -137,26 +137,39 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/content/posts.js */ 22));
+
+
+
+var _posts = _interopRequireDefault(__webpack_require__(/*! @/api/wp/posts.js */ 188));
 var _uniCopy = _interopRequireDefault(__webpack_require__(/*! @/js_sdk/xb-copy/uni-copy.js */ 41));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
 //
 //
-var _default = { data: function data() {return { postDetailData: {} };},
-  filters: {},
-
-  onLoad: function onLoad(option) {
-    this.getPostDetailById(option.id);
+//
+//
+//
+var _default = { data: function data() {return { postDetailData: {} };}, filters: {}, onLoad: function onLoad(option) {
+    this.getWpPostsDetail(option.id);
   },
   methods: {
-    getPostDetailById: function getPostDetailById(id) {var _this = this;
+    getWpPostsDetail: function getWpPostsDetail(id) {var _this = this;
       var data = {};
-      _posts.default.postDetailById(data, id).then(function (res) {
+
+      _posts.default.postsDetail(id, data).then(function (res) {
+        console.log(res);
+        _this.postDetailData = res;
+      }).catch(function (err) {
+        console.log(err);
+      });
+    },
+    getPostDetailById: function getPostDetailById(id) {var _this2 = this;
+      var data = {};
+      postsApi.postDetailById(data, id).then(function (res) {
         console.log(res);
         if (res.status == 200) {
-          _this.postDetailData = res.data;
+          _this2.postDetailData = res.data;
         } else {
           console.log(res);
         }

@@ -9,8 +9,8 @@
 				previous-margin="20" next-margin="20">
 				<swiper-item v-for="(item,index) in postBannerData" :key="index">
 					<view class="swiper-item" @click="turnPostDetail(item.id)">
-						<image :src="item.thumbnail" mode="aspectFill" lazy-load></image>
-						<view class="swiper-item-title">{{item.title}}</view>
+						<image :src="item['_embedded']['wp:featuredmedia'][0]['source_url']" mode="aspectFill" lazy-load></image>
+						<view class="swiper-item-title">{{item['title']['rendered']}}</view>
 					</view>
 				</swiper-item>
 			</swiper>
@@ -20,11 +20,11 @@
 			<view class="posts-title">最近更新</view>
 			<view class="posts">
 				<view class="posts-item" v-for="(item,index) in postsData" :key="index" >
-					<view class="posts-item-t" v-if="item.thumbnail">
-						<image lazy-load :src="item.thumbnail" mode="widthFix"></image>
+					<view class="posts-item-t" v-if="item['_embedded']['wp:featuredmedia'][0]['source_url']">
+						<image lazy-load :src="item['_embedded']['wp:featuredmedia'][0]['source_url']" mode="widthFix"></image>
 					</view>
 					<view class="posts-item-b" @click="turnPostDetail(item.id)">
-						<view class="posts-item-title">{{item.title}}</view>
+						<view class="posts-item-title">{{item['title']['rendered']}}</view>
 					</view>
 				</view>
 			</view>
@@ -35,10 +35,8 @@
 </template>
 
 <script>
-	import archiveApi from '@/api/content/archive.js';
-	import categoryApi from '@/api/content/category.js';
+	
 	import jrscApi from '@/api/jrsc.js';
-	import postsApi from '@/api/content/posts.js';
 	import wpPostsApi from '@/api/wp/posts.js';
 
 	export default {
@@ -46,10 +44,11 @@
 			return {
 				postBannerData: [],
 				postsData: [],
-				postPage: 0,
+				postPage: 1,
 				postPageSize: 5,
 				postLastPage: 0,
 				jrscData: {},
+				postLastPageStatus:false
 
 			}
 		},
@@ -59,40 +58,39 @@
 				this.getJrscToken();
 			}
 			this.getJrscSentence();
-			// this.getCategoryList();
-			// this.getPostListByCategorySlug('');
-			this.getPostsList(this.postPage, this.postPageSize);
-			this.getWpPosts();
+			
+			this.getStickyPosts(1,100);
+			this.getWpPosts(this.postPage,this.postPageSize);
 		},
 		methods: {
-			getWpPosts(){
+			getStickyPosts(page,pageSize){
 				let data ={
-					
+					sticky:true,
+					_embed:true,
+					page:page,
+					per_page:pageSize
 				}
 				wpPostsApi.postsList(data).then(res=>{
 					console.log(res)
+					this.postBannerData = res;
 				}).catch(err=>{
 					console.log(err)
 				})
 			},
-			getPostsList(page, size) {
-				let data = {
-					page: page,
-					size: size,
-					sort: 'createTime,desc'
+			getWpPosts(page,pageSize){
+				let data ={
+					_embed:true,
+					page:page,
+					per_page:pageSize
 				}
-				postsApi.listPosts(data).then(res => {
-					// console.log(res)
-					if (res.status == 200) {
-						let content = res.data.content;
-						if(page == 0){
-							this.postBannerData = content.slice(0, 4);
-						}
-						this.postsData = this.postsData.concat(content);
-						this.postLastPage = res.data.pages;
-						
+				wpPostsApi.postsList(data).then(res=>{
+					console.log(res)
+					if(res.code && res.data.status == 400){
+						this.postLastPageStatus = true;
+						return;
 					}
-				}).catch(err => {
+					this.postsData = this.postsData.concat(res);
+				}).catch(err=>{
 					console.log(err)
 				})
 			},
@@ -125,30 +123,6 @@
 					console.log(err)
 				})
 			},
-			getCategoryList() {
-				let data = {
-					sort: 'createTime,desc',
-					more: true
-				}
-				categoryApi.listCategories(data).then(res => {
-					console.log(res)
-				}).catch(err => {
-					console.log(err)
-				})
-			},
-			getPostListByCategorySlug(slug) {
-
-				let data = {
-					slug: slug
-				}
-
-				categoryApi.listsPostsByCategorySlug(data).then(res => {
-					console.log(res)
-				}).catch(err => {
-					console.log(err)
-				})
-
-			},
 			turnPostDetail(id){
 				uni.navigateTo({
 					url:'/pages/posts/detail?id='+id
@@ -157,13 +131,20 @@
 
 		},
 		onReachBottom() {
+			if(this.postLastPageStatus){
+				return;
+			}
 			this.postPage ++;
-			this.getPostsList(this.postPage, this.postPageSize);
+			this.getWpPosts(this.postPage, this.postPageSize);
 		},
 		onPullDownRefresh() {
 			this.getJrscSentence();
-			this.postPage = 0;
-			this.getPostsList(this.postPage, this.postPageSize);
+			this.postPage = 1;
+			this.postsData = [];
+			this.postBannerData = [];
+			this.postLastPageStatus = false;
+			this.getStickyPosts(1,100);
+			this.getWpPosts(this.postPage, this.postPageSize);
 			setTimeout(function(){
 				uni.stopPullDownRefresh();
 			},1000)
