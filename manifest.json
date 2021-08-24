@@ -80,6 +80,14 @@
 					"pathRewrite": {
 						"^/tenapi": "/"
 					}
+				},
+				"/wordpress":{
+					"target": "https://www.unilei.cn",
+					"changeOrigin": true,
+					"secure": false,
+					"pathRewrite": {
+						"^/wordpress": "/"
+					}
 				}
 			},
 			"https": false

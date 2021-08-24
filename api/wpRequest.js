@@ -2,7 +2,13 @@ const request = (config) => {
 	// 处理 apiUrl
 	let api_url = config.url;
 	
+	// #ifdef MP-WEIXIN
 	config.url = 'https://www.unilei.cn/' + api_url;
+	// #endif
+	
+	// #ifdef H5
+	config.url = '/wordpress/' + api_url;
+	// #endif
 	
 	if (!config.data) {
 		config.data = {};

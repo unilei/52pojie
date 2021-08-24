@@ -5,11 +5,10 @@
 		</view>
 
 		<view class="swiper-container">
-			<swiper class="swiper" :indicator-dots="false" :autoplay="true" :interval="2000" :duration="500" circular
+			<swiper class="swiper" :indicator-dots="false" :autoplay="true" :interval="3000" :duration="500" circular
 				previous-margin="20" next-margin="20">
 				<swiper-item v-for="(item,index) in postBannerData" :key="index">
-					<view class="swiper-item" @click="turnPostDetail(item.id)">
-						<image :src="item['_embedded']['wp:featuredmedia'][0]['source_url']" mode="aspectFill" lazy-load></image>
+					<view class="swiper-item" @click="turnPostDetail(item.id)" :style=" 'background-image: url('+ item['_embedded']['wp:featuredmedia'][0]['source_url'] + ')' ">
 						<view class="swiper-item-title">{{item['title']['rendered']}}</view>
 					</view>
 				</swiper-item>
@@ -162,6 +161,7 @@
 <style>
 	page {
 		background-color: #080904;
+		
 	}
 
 	.container {
@@ -188,6 +188,9 @@
 		border-radius: 20rpx;
 		overflow: hidden;
 		box-shadow: 0 0 10rpx 0 rgba(0, 0, 0, 0.2);
+		background-repeat: repeat;
+		background-size: 30%;
+		background-position: center;
 	}
 
 	.swiper-item image {
